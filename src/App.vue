@@ -1,28 +1,51 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Bingo Board</h1>
+    <BingoBoard />
+    <WinnerTable />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BingoBoard from './components/BingoBoard.vue'
+import WinnerTable from './components/WinnerTable.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    BingoBoard,
+    WinnerTable
   }
 }
 </script>
 
 <style>
+:root {
+  --ffcond: 'Oswald', sans-serif;
+  --ffbase: 'Roboto', sans-serif;
+}
+html {
+  margin: 0;
+
+  font-size: 10px;
+  font-family: var(--ffbase);
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+
+  font-size: 1.8rem;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ffcond);
 }
 </style>
