@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .reset-button {
-  margin-top: 5rem;
+  margin-top: 2rem;
   padding: .5rem 1rem;
 
   border: 0;
