@@ -7,7 +7,7 @@
         <label for="playername">Player name</label>
         <input type="text" id="playername" />
       </div>
-      <button v-on:click="addWinner">submit</button>
+      <button v-on:click="addPlayer">submit</button>
     </form>
 
     <table v-if="Object.keys(winnersarry).length > 0">
@@ -55,22 +55,26 @@ export default {
     }
   },
   methods: {
-    addWinner: function(e) {
+    addPlayer: function(e) {
       e.preventDefault();
-      let playername = document.getElementById('playername').value,
+      let playerinput = document.getElementById('playername'),
+        playername = playerinput.value,
         playerid = playername.replace(/\s/g, '-').toLowerCase();
 
-      if (this.winnersarry[playerid]) {
-        this.winnersarry[playerid].wins = this.winnersarry[playerid].wins + 1;
-      } else {
-        Vue.set(this.winnersarry, playerid, {
-          id: playerid,
-          name: playername,
-          wins: 1
-        });
-      }
+      if (playername.length > 0) {
+        if (this.winnersarry[playerid]) {
+          this.winnersarry[playerid].wins = this.winnersarry[playerid].wins + 1;
+        } else {
+          Vue.set(this.winnersarry, playerid, {
+            id: playerid,
+            name: playername,
+            wins: 1
+          });
+        }
 
-      window.localStorage.setItem('cachedwinners', JSON.stringify(this.winnersarry));
+        playerinput.value = '';
+        window.localStorage.setItem('cachedwinners', JSON.stringify(this.winnersarry));
+      }
     },
     addWin: function(e) {
       e.preventDefault();
