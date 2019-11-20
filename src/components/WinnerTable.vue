@@ -93,12 +93,16 @@ export default {
       this.winnersarry[elId].wins = this.winnersarry[elId].wins - 1;
       if (this.winnersarry[elId].wins === 0) {
         delete this.winnersarry[elId];
-        window.localStorage.setItem('cachedwinners', JSON.stringify(this.winnersarry));
       }
+      window.localStorage.setItem('cachedwinners', JSON.stringify(this.winnersarry));
     },
     clearPlayers: function(e) {
       e.preventDefault();
-      let el = e.target;
+
+      if (window.confirm('You are about to reset the player table. To proceed press ok')) {
+        this.winnersarry = {};
+        window.localStorage.removeItem('cachedwinners');
+      }
     }
   }
 }
