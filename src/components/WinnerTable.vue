@@ -36,6 +36,7 @@
         </tr>
       </tbody>
     </table>
+    <button v-if="Object.keys(winnersarry).length > 0" class="reset-button" v-on:click="clearPlayers">Clear players</button>
   </div>
 </template>
 
@@ -94,6 +95,10 @@ export default {
         delete this.winnersarry[elId];
         window.localStorage.setItem('cachedwinners', JSON.stringify(this.winnersarry));
       }
+    },
+    clearPlayers: function(e) {
+      e.preventDefault();
+      let el = e.target;
     }
   }
 }

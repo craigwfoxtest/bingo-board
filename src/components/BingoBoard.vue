@@ -148,23 +148,4 @@ export default {
   .col-button.active {
     color: hsla(50, 100%, 80%, 1);
   }
-
-  .reset-button {
-    margin-top: 5rem;
-    padding: .5rem 1rem;
-
-    border: 0;
-    background: hsla(0, 0%, 53%, 1);
-
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 600;
-
-    cursor: pointer;
-  }
-
-  .reset-button:focus,
-  .reset-button:hover {
-    background: hsla(0, 0%, 73%, 1);
-  }
 </style>

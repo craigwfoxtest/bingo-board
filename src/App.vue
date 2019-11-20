@@ -48,4 +48,23 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--ffcond);
 }
+
+.reset-button {
+  margin-top: 5rem;
+  padding: .5rem 1rem;
+
+  border: 0;
+  background: hsla(0, 0%, 40%, 1);
+
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.reset-button:focus,
+.reset-button:hover {
+  background: hsla(0, 0%, 50%, 1);
+}
 </style>
