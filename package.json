@@ -2,7 +2,7 @@
   "name": "bingo-board",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/craigwfox/bingo-board",
+  "homepage": "https://github.com/craigwfox/bingo-board/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
